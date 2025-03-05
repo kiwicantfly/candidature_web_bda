@@ -1,0 +1,110 @@
+:root {
+    --black: #232323;
+    --white: #fff; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+@font-face {
+    font-family: gaegu;
+    src: url(fonts/Gaegu/Gaegu-Regular.ttf);
+}
+
+::selection {
+    background: #fcba8e; 
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: gaegu;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    height: 100vh;
+    padding: 5rem 10vw;
+    scroll-snap-align: start;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+    font-size: min(3vw, 18px);
+}
+
+@media (min-width: 500px) {
+    section {
+        padding: 5rem 20vw;
+    }
+  }
+
+
+.section-item {
+    margin-bottom: 30px;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+label {
+    display: block;
+}
+
+input[type='radio'] {
+    accent-color: #232323;
+}
+
+
+.answer {
+    display: none;
+}
+
+
+.sentence {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.word {
+    padding: 5px 15px;
+    background: #283039;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+    user-select: none;
+}
+#message {
+    font-size: 18px;
+    color: white;
+    display: none;
+}
+
+#container {
+    position: relative;
+}
+
+#success-message {
+    display: none;
+}

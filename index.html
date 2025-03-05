@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vive les pandas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="hero-section white">
+            <div class="section-item" 
+                 style="text-align: center;">
+                <img class="profil-picture"
+                src="images/image.png"
+                alt="Une tête d'abruti."
+                style="width: min(15vh, 120px)">
+            </div>
+            <h1 class="section-item" 
+                style="font-weight: 500; text-align: center; font-size: clamp(6vw, 46px, 8vw);">
+                Je candidate respo web
+            </h1>
+            <p class="section-item">
+                Bien le bonjour !
+            </p>
+            <p class="section-item">
+                Parce que je comprends parfaitement que vous ayez un peu la flemme de lire toute ma candidature, je vous propose de faire un petit jeu en même temps. 
+            </p>
+            <p class="section-item">
+                Je vais me présenter en quelques points, et à chaque fois, vous devez trouver un Boris comme lui :     
+            </p>
+            <p class="section-item"
+                style="text-align: center">
+                ʕ•ᴥ•ʔ  
+            </p>
+            <p class="section-item">
+                Hésitez pas à donner votre score en commentaire :).
+            </p>
+            <p style="text-align: right">
+                Jafar
+            </p>
+        </section>
+        <section class="black">
+            <p>Je suis originaire de Châteauroux (Pour de vrai)</p>
+            <br>
+            <p>Mais où est donc Châteauroux sur la carte ? (Au pixel près attention)</p>
+            <div id="image-container" class="section-item" style="width: 100%; text-align: center;">
+                <img class="map-france"
+                    id = "target-image"
+                    src="images/france.png"
+                    alt="carte-de-la-france"
+                    style="height: 180px; width: 180px; margin-top: 50px; cursor: pointer;"
+                >
+            </div>
+            <p id="success-message">Bravo ! Tu as cliqué au bon endroit.</p>
+        </section>
+        <section class="white">
+            <p>Quel est le gentilé de la ville de Châteauroux ?</p>
+            <br>
+            <form>
+                <label><input type="radio" name="reponse-ville" value="1"> C'est quoi le 'gentilé' ?</label>                
+                <label><input type="radio" name="reponse-ville" value="2"> On les appelle par leur prénom parce qu'ils sont 4.</label> 
+                <label><input type="radio" name="reponse-ville" value="3"> Châteauroussoise, Châteauroussoix</label>
+                <label><input type="radio" name="reponse-ville" value="4"> Châteauroussienne, Châteauroussien</label>
+                <label><input type="radio" name="reponse-ville" value="5"> Castelroussine, Castelroussin (Parce que why not ?)</label>
+                <label><input type="radio" name="reponse-ville" value="6"> Châteaurouquine, Châteaurouquin</label>  
+                <br>
+                <p class="answer" id="answer"></p>  
+            </form>
+        </section>
+        <section class="black">
+            <div class="sentence" id="sortable"></div>
+            <div id="message">Bravo ! Tu as réussi. Voici un autre Boris : ʕ•ᴥ•ʔ</div>
+        </section>
+        <section class="white">
+            <p>Goodbye.</p>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
