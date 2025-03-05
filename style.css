@@ -67,6 +67,10 @@ section {
     color: white;
 }
 
+/*---------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------*/
+
 label {
     display: block;
 }
@@ -106,5 +110,21 @@ input[type='radio'] {
 }
 
 #success-message {
+    display: none;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+#map-container {
+    background-image: url(images/map.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px; 
+    width: 200px; 
+    margin-top: 50px; 
+    cursor: pointer;
+}
+
+.map-france {
     display: none;
 }

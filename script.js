@@ -56,7 +56,8 @@ radios.forEach(radio => {
 
 
 
-const image = document.getElementById("target-image");
+const image = document.getElementById("map-container");
+const answerMap = document.getElementById("target-image")
 const message = document.getElementById("success-message");
 
 image.addEventListener("click", function(event) {
@@ -64,13 +65,16 @@ image.addEventListener("click", function(event) {
     const clickX = (event.clientX - rect.left) / rect.width * 100;
     const clickY = (event.clientY - rect.top) / rect.height * 100;
     
-    const targetX = 50; // Coordonnée X relative (en %)
-    const targetY = 40; // Coordonnée Y relative (en %)
-    const tolerance = 20 // Tolérance de clic en %
+    const targetX = 47; // Coordonnée X relative (en %)
+    const targetY = 51; // Coordonnée Y relative (en %)
+    const tolerance = 10 // Tolérance de clic en %
     
     if (Math.abs(clickX - targetX) <= tolerance && Math.abs(clickY - targetY) <= tolerance) {
         message.style.display = "block";
+        answerMap.style.display = "block";
+
     } else {
         message.style.display = "none";
+        answerMap.style.display = "none";
     }
 });
