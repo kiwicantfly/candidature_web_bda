@@ -29,7 +29,7 @@ const messages = {
     "3": "Ça aurait pu, mais c'est pas ça.",
     "4": "Pas mal, mais c'est autre chose.",
     "5": "Et oui c'est bien ça !",
-    "6": "Ça c'est si on cumule les cheveux roux."
+    "6": "Ça c'est si on habite à Châteauroux et qu'on a les cheveux roux."
 };
 
 const radios = document.querySelectorAll('input[name="reponse-ville"]');

@@ -144,7 +144,7 @@ input[type='radio'] {
 }
 
 #answer {
-    height: clamp(10vw, 72px, 14vw);
+    height: calc(2 * clamp(5vw, 36px, 7vw));
 }
 
 /**/
