@@ -24,29 +24,33 @@ const correctOrder = ["Je", "suis", "une", "huitre", "et", "j'aime", "la","route
 
 
 const messages = {
-    "1": "Comment on appelle les gens d'une ville.",
+    "1": "C'est le nom des habitants d'une ville.",
     "2": "4 ? Plutôt 40 000.",
-    "3": "Le vert représente la nature et l'harmonie !",
-    "4": "Le jaune est la couleur du soleil et de la joie !",
-    "5": "Et oui c'est bien ça ! Parce que why not ? ʕ•ᴥ•ʔ",
-    "6": "Le jaune couleur du soleil et de la joie !"
+    "3": "Ça aurait pu, mais c'est pas ça.",
+    "4": "Pas mal, mais c'est autre chose.",
+    "5": "Et oui c'est bien ça !",
+    "6": "Ça c'est si on cumule les cheveux roux."
 };
 
 const radios = document.querySelectorAll('input[name="reponse-ville"]');
 const answer = document.getElementById("answer");
+const gentileHiddenBoris = document.getElementById("gentile-hidden-boris");
+
 
 radios.forEach(radio => {
     radio.addEventListener("change", function() {
         if (this.checked) {
-            if (this.value == "5") {
-                answer.style.color = 'green';
+            if (this.value != "5") {
+                gentileHiddenBoris.style.visibility = "hidden";
+                answer.style.color = '#fcba8e';
             } else {
-                answer.style.color = 'red';
+                answer.style.color = 'black';
+                gentileHiddenBoris.style.visibility = "visible";
             }
             answer.textContent = messages[this.value];
-            answer.style.display = "block";
+            answer.style.visibility = "visible";
         }
-    });
+    }); 
 });
 
 
