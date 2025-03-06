@@ -1,6 +1,7 @@
 :root {
-    --black: #232323;
-    --white: #fff; 
+    --black: black/*#232323*/;
+    --white: #fbf8f3; 
+    --corail: #fcba8e;
 }
 
 * {
@@ -19,7 +20,7 @@ html {
 }
 
 ::selection {
-    background: #fcba8e; 
+    background: var(--corail); 
 }
 
 body {
@@ -34,8 +35,11 @@ main {
 }
 
 section {
-    height: 100vh;
-    padding: 5rem 10vw;
+    height: 100%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: auto;
+    padding-bottom: auto;
     scroll-snap-align: start;
     
     display: flex;
@@ -43,33 +47,88 @@ section {
     justify-content: center;
     align-items: left;
     
-    font-size: min(3vw, 18px);
+    font-size: min(5vw, 28px);
 }
 
 @media (min-width: 500px) {
     section {
-        padding: 5rem 20vw;
+        padding-left: 22vw;
+        padding-right: 22vw;
+        padding-top: auto;
+        padding-bottom: auto;
     }
   }
 
 
 .section-item {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .white {
-    background-color: white;
-    color: black;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .black {
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
 }
 
-/*---------------------------------------------------------------------------------*/
+.boris {
+    text-align: center;
+}
 
-/*---------------------------------------------------------------------------------*/
+
+
+
+
+/* Hero section */
+
+#hero-section h1 {
+    font-weight: 500; 
+    text-align: center; 
+    font-size: clamp(5vw, 36px, 7vw);
+}
+
+#profil-picture {
+    width: min(15vh, 120px)
+}
+
+
+
+
+/* Chateauroux */
+
+#map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+#background-map {
+    background-image: url(images/map.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: min(50vw, 320px); 
+    width: min(50vw, 320px); 
+    cursor: pointer;
+}
+
+#target-image {
+    display: none;
+    height: 100%; 
+    width: 100%; 
+    cursor: pointer;
+}
+
+#chateauroux-hidden-boris, #success-message {
+    visibility: hidden;
+}
+
+
+/**/
 
 label {
     display: block;
@@ -94,14 +153,14 @@ input[type='radio'] {
 .word {
     padding: 5px 15px;
     background: #283039;
-    color: white;
+    color: var(--white);
     border-radius: 5px;
     cursor: grab;
     user-select: none;
 }
 #message {
     font-size: 18px;
-    color: white;
+    color: var(--white);
     display: none;
 }
 
@@ -109,22 +168,7 @@ input[type='radio'] {
     position: relative;
 }
 
-#success-message {
-    display: none;
-}
+
 
 /*---------------------------------------------------------------------------------*/
 
-#map-container {
-    background-image: url(images/map.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 200px; 
-    width: 200px; 
-    margin-top: 50px; 
-    cursor: pointer;
-}
-
-.map-france {
-    display: none;
-}

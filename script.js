@@ -59,6 +59,9 @@ radios.forEach(radio => {
 const image = document.getElementById("map-container");
 const answerMap = document.getElementById("target-image")
 const message = document.getElementById("success-message");
+const chateaurouxHiddenBoris = document.getElementById("chateauroux-hidden-boris");
+
+
 
 image.addEventListener("click", function(event) {
     const rect = image.getBoundingClientRect();
@@ -67,14 +70,17 @@ image.addEventListener("click", function(event) {
     
     const targetX = 47; // Coordonnée X relative (en %)
     const targetY = 51; // Coordonnée Y relative (en %)
-    const tolerance = 10 // Tolérance de clic en %
+    const tolerance = 3 // Tolérance de clic en %
     
     if (Math.abs(clickX - targetX) <= tolerance && Math.abs(clickY - targetY) <= tolerance) {
-        message.style.display = "block";
+        message.style.visibility = "visible";
         answerMap.style.display = "block";
+        chateaurouxHiddenBoris.style.visibility = "visible";
 
     } else {
-        message.style.display = "none";
+        message.style.visibility = "hidden";
         answerMap.style.display = "none";
+        chateaurouxHiddenBoris.style.visibility = "hidden";
+
     }
 });
