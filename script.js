@@ -1,4 +1,6 @@
-const correctOrder = ["Je", "suis", "une", "huitre", "et", "j'aime", "la","route", "avec", "des", "beaux", "paysages"];
+const sentenceHiddenBoris = document.getElementById("sentence-hidden-boris");
+
+const correctOrder = ["Je", "suis", "une", "moule", "avec", "la", "tête", "léniniste", "et", "un", "petit", "nez"];
         let shuffledWords = [...correctOrder].sort(() => Math.random() - 0.5);
         
         const container = document.getElementById("sortable");
@@ -15,9 +17,12 @@ const correctOrder = ["Je", "suis", "une", "huitre", "et", "j'aime", "la","route
             onEnd: () => {
                 let currentOrder = Array.from(container.children).map(el => el.textContent);
                 if (JSON.stringify(currentOrder) === JSON.stringify(correctOrder)) {
-                    document.getElementById("message").style.display = "block";
+                    document.getElementById("message").style.visibility = "visible";
+                    sentenceHiddenBoris.style.visibility = "visible";
                 } else {
-                    document.getElementById("message").style.display = "none";
+                    document.getElementById("message").style.visibility = "hidden";
+                    sentenceHiddenBoris.style.visibility = "hidden";
+
                 }
             }
         });
@@ -28,7 +33,7 @@ const messages = {
     "2": "4 ? Plutôt 40 000.",
     "3": "Ça aurait pu, mais c'est pas ça.",
     "4": "Pas mal, mais c'est autre chose.",
-    "5": "Et oui c'est bien ça !",
+    "5": "Et oui c'est bien ça ! Tu as mérité ton Boris :",
     "6": "Ça c'est si on habite à Châteauroux et qu'on a les cheveux roux."
 };
 
@@ -74,7 +79,7 @@ image.addEventListener("click", function(event) {
     
     const targetX = 47; // Coordonnée X relative (en %)
     const targetY = 51; // Coordonnée Y relative (en %)
-    const tolerance = 3 // Tolérance de clic en %
+    const tolerance = 8 // Tolérance de clic en %
     
     if (Math.abs(clickX - targetX) <= tolerance && Math.abs(clickY - targetY) <= tolerance) {
         message.style.visibility = "visible";

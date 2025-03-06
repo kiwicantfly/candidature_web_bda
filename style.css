@@ -144,10 +144,10 @@ input[type='radio'] {
 }
 
 #answer {
-    height: calc(2 * clamp(5vw, 36px, 7vw));
+    height: min(100px, calc(2 * clamp(5vw, 36px, 7vw)));
 }
 
-/**/
+/*Sentence*/
 
 .sentence {
     display: flex;
@@ -163,10 +163,8 @@ input[type='radio'] {
     cursor: grab;
     user-select: none;
 }
-#message {
-    font-size: 18px;
-    color: var(--white);
-    display: none;
+#message, #sentence-hidden-boris{
+    visibility: hidden;
 }
 
 #container {
