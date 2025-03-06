@@ -1,7 +1,13 @@
+/*-------*/
+
 :root {
     --black: black/*#232323*/;
     --white: #fbf8f3; 
     --corail: #fcba8e;
+}
+
+::selection {
+    background: var(--corail); 
 }
 
 * {
@@ -10,17 +16,13 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-snap-type: y mandatory;
-}
-
 @font-face {
     font-family: gaegu;
     src: url(fonts/Gaegu/Gaegu-Regular.ttf);
 }
 
-::selection {
-    background: var(--corail); 
+html {
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -59,7 +61,6 @@ section {
     }
   }
 
-
 .section-item {
     margin-bottom: 20px;
 }
@@ -78,17 +79,13 @@ section {
     text-align: center;
 }
 
-
+.hidden-boris, .hidden-message {
+    visibility: hidden;
+}
 
 
 
 /* Hero section */
-
-#hero-section h1 {
-    font-weight: 500; 
-    text-align: center; 
-    font-size: clamp(5vw, 36px, 7vw);
-}
 
 #profil-picture {
     width: min(12vh, 120px);
@@ -97,8 +94,7 @@ section {
 
 
 
-
-/* Chateauroux */
+/* Châteauroux */
 
 #map-container {
     display: flex;
@@ -117,23 +113,16 @@ section {
     cursor: pointer;
 }
 
-#target-image {
+#target-map {
     display: none;
     height: 100%; 
     width: 100%; 
     cursor: pointer;
 }
 
-#chateauroux-hidden-boris, #success-message {
-    visibility: hidden;
-}
 
 
-/*Gentile*/
-
-#gentile-hidden-boris, #answer {
-    visibility: hidden;
-}
+/* Gentilé */
 
 label {
     display: block;
@@ -143,11 +132,13 @@ input[type='radio'] {
     accent-color: #232323;
 }
 
-#answer {
+#gentilic-message {
     height: min(100px, calc(2 * clamp(5vw, 36px, 7vw)));
 }
 
-/*Sentence*/
+
+
+/* Rêve */
 
 .sentence {
     display: flex;
@@ -155,6 +146,7 @@ input[type='radio'] {
     padding: 20px;
     flex-wrap: wrap;
 }
+
 .word {
     padding: 5px 15px;
     background: #283039;
@@ -163,15 +155,3 @@ input[type='radio'] {
     cursor: grab;
     user-select: none;
 }
-#message, #sentence-hidden-boris{
-    visibility: hidden;
-}
-
-#container {
-    position: relative;
-}
-
-
-
-/*---------------------------------------------------------------------------------*/
-

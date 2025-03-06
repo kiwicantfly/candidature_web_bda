@@ -3,74 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vive les pandas</title>
+    <title>oui</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
 
-        <section id="hero-section" class="white">
+
+
+        <!--Hero section-->
+        <section class="white" id="hero-section">
             <div class="section-item" style="text-align: center;">
-                <img id="profil-picture" src="images/image.png" alt="Une tête d'abruti">
+                <img id="profil-picture" src="images/profil_picture.png" alt="Une tête d'abruti">
             </div>
-            <p class="section-item">
-                Bien le bonjour 
-            </p>
-            <p class="section-item">
-                Pour rendre cette candidature respo web un peu amusante, je te propose de faire un petit jeu. 
-            </p>
-            <p class="section-item">                
-                Je vais me présenter en quelques points, et à chaque fois, tu devras trouver un Boris comme lui :     
-            </p>
-            <p class="section-item boris">
-                ʕ•ᴥ•ʔ  
-            </p>
-            <p class="section-item">
-                N'hésite pas à partager ton score :)
-            </p>
-            <p style="text-align: right">
-                Jafar
-            </p>
+            <p class="section-item">Bien le bonjour</p>
+            <p class="section-item">Pour rendre cette candidature respo web un peu amusante, je te propose de faire un petit jeu. </p>
+            <p class="section-item">Je vais me présenter en quelques points, et à chaque fois, tu devras trouver un Boris comme lui :</p>
+            <p class="section-item boris">ʕ•ᴥ•ʔ</p>
+            <p class="section-item">Il y en a 3 à trouver.</p>
+            <p style="text-align: right">Jafar</p>
         </section>
 
-        <section id="chateauroux" class="black">
-            <p class="section-item">Je viens de Châteauroux (Oui oui, pour de vrai)
-            </p>            
-            <p>
-            Mais où est donc Châteauroux ? (Au pixel près attention)</p>
-            </p>
+
+
+        <!--Châteauroux-->
+        <section class="black" id="chateauroux">
+            <p class="section-item">Je viens de Châteauroux (Oui oui, pour de vrai)</p>            
+            <p>Mais où est donc Châteauroux ? (Au pixel près attention)</p>
             <div id="map-container">
                 <div id="background-map">
-                    <img id = "target-image" src="images/mapwithtag.png">
+                    <img id="target-map" src="images/pinned_map.png">
                 </div>
             </div>
-            <p id="success-message" class="section-item">Excellent ! Voici un beau Boris :</p>
-            <p id="chateauroux-hidden-boris" class="boris">ʕ•ᴥ•ʔ</p>
+            <p class="section-item hidden-message" id="chateauroux-success-message">Excellent ! Voici un beau Boris :</p>
+            <p class="boris hidden-boris" id="chateauroux-hidden-boris">ʕ•ᴥ•ʔ</p>
         </section>
 
-        <section id="gentile" class="white">
+
+
+        <!--Gentilé-->
+        <section class="white" id="gentilic">
             <p class="section-item">Quel est le gentilé de la ville de Châteauroux ?</p>
             <form class="section-item">
-                <label><input type="radio" name="reponse-ville" value="1"> C'est quoi le 'gentilé' ?</label>                
-                <label><input type="radio" name="reponse-ville" value="2"> On les appelle par leur prénom parce qu'ils sont 4.</label> 
-                <label><input type="radio" name="reponse-ville" value="3"> Châteauroussoise, Châteauroussoix</label>
-                <label><input type="radio" name="reponse-ville" value="4"> Châteauroussienne, Châteauroussien</label>
-                <label><input type="radio" name="reponse-ville" value="5"> Castelroussine, Castelroussin (Parce que pourquoi pas ?)</label>
-                <label><input type="radio" name="reponse-ville" value="6"> Châteaurouquine, Châteaurouquin</label>         
+                <label><input type="radio" name="gentilic-answer" value="1"> C'est quoi le 'gentilé' ?</label>                
+                <label><input type="radio" name="gentilic-answer" value="2"> On les appelle par leur prénom parce qu'ils sont 4.</label> 
+                <label><input type="radio" name="gentilic-answer" value="3"> Châteauroussoise, Châteauroussoix</label>
+                <label><input type="radio" name="gentilic-answer" value="4"> Châteauroussienne, Châteauroussien</label>
+                <label><input type="radio" name="gentilic-answer" value="5"> Castelroussine, Castelroussin (Parce que pourquoi pas ?)</label>
+                <label><input type="radio" name="gentilic-answer" value="6"> Châteaurouquine, Châteaurouquin</label>         
             </form>
-            <p id="answer"></p> 
-            <p id="gentile-hidden-boris" class="boris">ʕ•ᴥ•ʔ</p> 
+            <p class="hidden-message" id="gentilic-message"></p> 
+            <p class="boris hidden-boris" id="gentilic-hidden-boris">ʕ•ᴥ•ʔ</p> 
         </section>
 
-        <section id="sentence" class="black">
+
+
+        <!--Rêve-->
+        <section class="black" id="dream">
             <p class="section-item">De quoi rêve-je la nuit ?</p>
             <p class="section-item">Remets les mots dans le bon ordre pour le savoir :</p>
             <div class="sentence section-item" id="sortable"></div>
-            <div id="message" class="section-item">Bravo ! Tu as réussi. Voici un autre Boris :</div>
-            <p id="sentence-hidden-boris" class="boris">ʕ•ᴥ•ʔ</p>
+            <p class="section-item hidden-message" id="dream-success-message">Bravo ! Tu as réussi. Voici un autre Boris :</p>
+            <p class="boris hidden-boris" id="dream-hidden-boris">ʕ•ᴥ•ʔ</p>
         </section>
 
+
+
+        <!--New section-->
         <section class="white">
             <p>Goodbye.</p>
         </section>
