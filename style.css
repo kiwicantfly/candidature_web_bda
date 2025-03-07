@@ -178,8 +178,8 @@ input[type='radio'] {
     background-image: url(images/padlock_open.png);
     background-repeat: no-repeat;
     background-size: contain;
-    height: min(15vw, 80px); 
-    width: min(15vw, 80px); 
+    height: min(10vw, 50px); 
+    width: min(10vw, 50px); 
 }
 
 #padlock-closed {
