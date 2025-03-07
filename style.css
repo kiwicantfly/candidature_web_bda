@@ -84,7 +84,6 @@ section {
 }
 
 
-
 /* Hero section */
 
 #profil-picture {
@@ -154,4 +153,67 @@ input[type='radio'] {
     border-radius: 5px;
     cursor: grab;
     user-select: none;
+}
+
+
+
+/* Mot de passe */
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+#padlock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background-padlock {
+    background-image: url(images/padlock_open.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: min(15vw, 80px); 
+    width: min(15vw, 80px); 
+}
+
+#padlock-closed {
+    height: 100%; 
+    width: 100%; 
+}
+
+#password-input, #check-password {
+    text-align: center;
+    font-family: gaegu;
+    font-size: min(5vw, 28px);
+    width: min(200px, 40vw);
+}
+
+.hint {
+    height: min(5vw, 28px);
+}
+
+#hints-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hint-button {
+    font-family: gaegu;
+    font-size: min(5vw, 28px);
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+#hint-2, #hint-3 {
+    visibility: hidden;
 }

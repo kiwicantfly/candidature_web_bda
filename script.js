@@ -63,7 +63,7 @@ radios.forEach(radio => {
 
 
 
-/* Sentence */
+/* Rêve */
 
 const dreamHiddenBoris = document.getElementById("dream-hidden-boris");
 const correctOrder = ["Je", "suis", "une", "moule", "avec", "la", "tête", "léniniste", "et", "un", "petit", "nez"];
@@ -95,3 +95,74 @@ new Sortable(container, {
     }
 });
 
+
+
+/* Mot de passe */
+const hint1Button = document.getElementById("hint-1-button");
+const hint2Button = document.getElementById("hint-2-button");
+const hint3Button = document.getElementById("hint-3-button");
+
+hint1Button.addEventListener("click", function() {
+    hint1Button.style.display = "none";
+    const hint1 = document.getElementById("hint-1");
+    const hint1Text = document.createElement("p") ;
+    hint1Text.textContent = "C'est trop bon";
+    hint1.appendChild(hint1Text);
+    hint2Button.style.visibility = "visible";
+})
+
+hint2Button.addEventListener("click", function() {
+    hint2Button.style.display = "none";
+    const hint2 = document.getElementById("hint-2");
+    const hint2Text = document.createElement("p") ;
+    hint2Text.textContent = "Mais vraiment trop bon";
+    hint2.appendChild(hint2Text);
+    hint2.style.visibility = "visible";
+    hint3Button.style.visibility = "visible";
+})
+
+hint3Button.addEventListener("click", function() {
+    hint3Button.style.display = "none";
+    const hint3 = document.getElementById("hint-3");
+    const hint3Text = document.createElement("p") ;
+    hint3Text.textContent = "Que c'est bon";
+    hint3.appendChild(hint3Text);
+    hint3.style.visibility = "visible";
+})
+
+const wrongAnswer = ["C'est pas ça", 
+    "C'est pas ça non plus", 
+    "Non plus", 
+    "Toujours pas", 
+    "Encore moins", 
+    "Non", 
+    "No", 
+    "Nope", 
+    "Nein", 
+    "Courage, tu peux le faire", 
+    "Nan", 
+    "C'était 'burger'"];
+
+let count = 0;
+
+function checkPassword() {
+    const correctWord = "burger";
+    const userWord = document.getElementById("password-input").value.trim().toLowerCase();
+    const passwordMessage = document.getElementById("password-message");
+    const passwordHiddenBoris = document.getElementById("password-hidden-boris");
+    const padlockClosed = document.getElementById("padlock-closed");
+
+    if (userWord === correctWord) {
+        passwordMessage.style.color = 'black';
+        passwordMessage.textContent = "Formidable ! Ya pas d'heure pour un ptit burger.";
+        passwordMessage.style.visibility = "visible";
+        
+        passwordHiddenBoris.style.visibility = "visible";
+        padlockClosed.style.display ="none";
+    } else {
+        passwordMessage.style.color = '#fcba8e';
+        passwordMessage.textContent = wrongAnswer[count%wrongAnswer.length];
+        count++;
+        passwordMessage.style.visibility = "visible";
+    }
+}

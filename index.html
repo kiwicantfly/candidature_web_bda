@@ -70,10 +70,42 @@
 
 
 
-        <!--New section-->
-        <section class="white">
-            <p>Goodbye.</p>
+        <!--Mot de passe-->
+        <section class="white" id="password">
+            <p class="section-item">Qu'est-ce que je pourrais manger à n'importe quelle heure de la journée ?</p>
+            <div class="section-item" id="padlock-container">
+                <div id="background-padlock">
+                    <img id="padlock-closed" src="images/padlock_closed.png">
+                </div>
+            </div>
+            <div  class="section-item" id="input-container" style="text-align: center;">
+                <input id="password-input" placeholder="miam" type="text">
+                <button id="check-password" onclick="checkPassword()">Essayer</button>
+            </div>
+            <div class="section-item" id="hints-container">
+                <div class="hint section-item" id="hint-1">
+                    <button class="hint-button" id="hint-1-button">Undice ?</button>
+                </div>
+                <div class="hint section-item" id="hint-2">
+                    <button class="hint-button" id="hint-2-button">Deudice ?</button>
+                </div>
+                <div class="hint section-item" id="hint-3">
+                    <button class="hint-button" id="hint-3-button">Troidice ?</button>
+                </div>
+            </div>
+            <p class="section-item hidden-message" id="password-message"></p>
+            <p class="boris hidden-boris" id="password-hidden-boris">ʕ•ᴥ•ʔ</p>
         </section>
+    
+    
+
+        <!--New section-->
+        <section class="black">
+            <p>La bise</p>
+        </section>
+
+        
+
     </main>
     
     <script src="script.js"></script>
