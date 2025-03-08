@@ -2,8 +2,10 @@
 
 :root {
     --black: black/*#232323*/;
+    --dark-grey: #283039;
     --white: #fbf8f3; 
     --corail: #fcba8e;
+    --red: #ff6b51;
 }
 
 ::selection {
@@ -50,6 +52,10 @@ section {
     align-items: left;
     
     font-size: min(5vw, 28px);
+}
+
+.accent {
+    font-size: calc(0.8 * min(5vw, 28px));
 }
 
 @media (min-width: 500px) {
@@ -148,7 +154,7 @@ input[type='radio'] {
 
 .word {
     padding: 5px 15px;
-    background: #283039;
+    background: var(--dark-grey);
     color: var(--white);
     border-radius: 5px;
     cursor: grab;
@@ -192,6 +198,13 @@ input[type='radio'] {
     font-family: gaegu;
     font-size: min(5vw, 28px);
     width: min(200px, 40vw);
+}
+
+#check-password {
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--dark-grey);
 }
 
 .hint {

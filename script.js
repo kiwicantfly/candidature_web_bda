@@ -1,3 +1,5 @@
+const red = '#ff6b51';
+
 /* Châteauroux */
 
 const mapContainer = document.getElementById("map-container");
@@ -50,7 +52,7 @@ radios.forEach(radio => {
         if (this.checked) {
             if (this.value != "5") {
                 /*gentilicHiddenBoris.style.visibility = "hidden";*/
-                gentilicMessage.style.color = '#fcba8e';
+                gentilicMessage.style.color = red;
             } else {
                 gentilicMessage.style.color = 'black';
                 gentilicHiddenBoris.style.visibility = "visible";
@@ -66,7 +68,7 @@ radios.forEach(radio => {
 /* Rêve */
 
 const dreamHiddenBoris = document.getElementById("dream-hidden-boris");
-const correctOrder = ["Je", "suis", "une", "moule", "avec", "la", "tête", "léniniste", "et", "un", "petit", "nez"];
+const correctOrder = ["je", "suis", "une", "moule", "avec", "la", "tête", "léniniste"];
 const container = document.getElementById("sortable");
 const dreamSuccessMessage = document.getElementById("dream-success-message");
 
@@ -106,7 +108,7 @@ hint1Button.addEventListener("click", function() {
     hint1Button.style.display = "none";
     const hint1 = document.getElementById("hint-1");
     const hint1Text = document.createElement("p") ;
-    hint1Text.textContent = "C'est trop bon";
+    hint1Text.textContent = "C'est un plat faussement équilibré";
     hint1.appendChild(hint1Text);
     hint2Button.style.visibility = "visible";
 })
@@ -115,7 +117,7 @@ hint2Button.addEventListener("click", function() {
     hint2Button.style.display = "none";
     const hint2 = document.getElementById("hint-2");
     const hint2Text = document.createElement("p") ;
-    hint2Text.textContent = "Mais vraiment trop bon";
+    hint2Text.textContent = "Ça vient de Hambourg";
     hint2.appendChild(hint2Text);
     hint2.style.visibility = "visible";
     hint3Button.style.visibility = "visible";
@@ -125,7 +127,7 @@ hint3Button.addEventListener("click", function() {
     hint3Button.style.display = "none";
     const hint3 = document.getElementById("hint-3");
     const hint3Text = document.createElement("p") ;
-    hint3Text.textContent = "Que c'est bon";
+    hint3Text.textContent = "Que c'est bon putain";
     hint3.appendChild(hint3Text);
     hint3.style.visibility = "visible";
 })
@@ -152,7 +154,7 @@ function checkPassword() {
     const passwordHiddenBoris = document.getElementById("password-hidden-boris");
     const padlockClosed = document.getElementById("padlock-closed");
 
-    if (userWord === correctWord) {
+    if (userWord === correctWord || userWord === "hamburger") {
         passwordMessage.style.color = 'black';
         passwordMessage.textContent = "Formidable ! Ya pas d'heure pour un ptit burger.";
         passwordMessage.style.visibility = "visible";
@@ -160,7 +162,7 @@ function checkPassword() {
         passwordHiddenBoris.style.visibility = "visible";
         padlockClosed.style.display ="none";
     } else {
-        passwordMessage.style.color = '#fcba8e';
+        passwordMessage.style.color = red;
         passwordMessage.textContent = wrongAnswer[count%wrongAnswer.length];
         count++;
         passwordMessage.style.visibility = "visible";
