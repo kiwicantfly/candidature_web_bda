@@ -15,7 +15,7 @@ mapContainer.addEventListener("click", function(event) {
     // En % 
     const targetX = 47; 
     const targetY = 51; 
-    const tolerance = 10;
+    const tolerance = 8;
     
     if (Math.abs(clickX - targetX) <= tolerance && Math.abs(clickY - targetY) <= tolerance) {
         targetMap.style.display = "block";
@@ -122,6 +122,7 @@ document.querySelectorAll('.music-image-container').forEach(container => {
     container.addEventListener('click', function() {
         if (currentSelected === this) {
             currentSelected.classList.remove('selected');
+            musicMessage.style.visibility = 'hidden';
             currentAudio.pause();
             currentAudio.currentTime = 0;
             currentSelected = null;
@@ -146,6 +147,15 @@ document.querySelectorAll('.music-image-container').forEach(container => {
                 }
             }
             musicMessage.style.visibility = 'visible';
+
+            currentAudio.addEventListener('ended', function() {
+                if (currentSelected) {
+                    currentSelected.classList.remove('selected');
+                    musicMessage.style.visibility = 'hidden';
+                    currentSelected = null;
+                    currentAudio = null;
+                }
+            });
         }
     });
 });

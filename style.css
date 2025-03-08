@@ -96,7 +96,7 @@ section {
 /* Hero section */
 
 #profil-picture {
-    width: min(12vh, 120px);
+    width: min(12vh, 100px);
     margin-bottom: 40px;
 }
 
