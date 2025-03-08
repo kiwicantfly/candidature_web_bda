@@ -98,6 +98,34 @@ new Sortable(container, {
 });
 
 
+/* Funk */
+let currentAudio = null;
+let currentSelected = null;
+
+document.querySelectorAll('.funk-image-container').forEach(container => {
+    container.addEventListener('click', function() {
+        if (currentSelected === this) {
+            currentSelected.classList.remove('selected');
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentSelected = null;
+            currentAudio = null;
+        } else {
+            if (currentSelected) {
+                currentSelected.classList.remove('selected');
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            this.classList.add('selected');
+            currentAudio = new Audio(this.getAttribute('data-audio'));
+            currentAudio.play();
+            currentSelected = this;
+        }
+    });
+});
+
+
+
 
 /* Mot de passe */
 const hint1Button = document.getElementById("hint-1-button");
@@ -155,14 +183,12 @@ function checkPassword() {
     const padlockClosed = document.getElementById("padlock-closed");
 
     if (userWord === correctWord || userWord === "hamburger") {
-        passwordMessage.style.color = 'black';
         passwordMessage.textContent = "Formidable ! Ya pas d'heure pour un ptit burger.";
         passwordMessage.style.visibility = "visible";
         
         passwordHiddenBoris.style.visibility = "visible";
         padlockClosed.style.display ="none";
     } else {
-        passwordMessage.style.color = red;
         passwordMessage.textContent = wrongAnswer[count%wrongAnswer.length];
         count++;
         passwordMessage.style.visibility = "visible";

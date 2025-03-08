@@ -162,6 +162,35 @@ input[type='radio'] {
 }
 
 
+/* Funk */
+
+.funk-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.funk-image-container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: min(20vw, 100px);
+    height: min(20vw, 100px);
+    border-radius: 50%;
+
+}
+
+.funk-image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.selected {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    border: 5px solid rgb(0, 174, 248);
+}
+
 
 /* Mot de passe */
 
@@ -198,11 +227,11 @@ input[type='radio'] {
     font-family: gaegu;
     font-size: min(5vw, 28px);
     width: min(200px, 40vw);
+    border-radius: 5px;
 }
 
 #check-password {
     border: none;
-    border-radius: 20px;
     color: white;
     background-color: var(--dark-grey);
 }
@@ -225,6 +254,7 @@ input[type='radio'] {
     border: none;
     cursor: pointer;
     background: none;
+    color: var(--white);
 }
 
 #hint-2, #hint-3 {

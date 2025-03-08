@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecteur de son</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .image-container {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+
+        }
+
+        .image-container img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .selected {
+            transform: scale(1.1);
+            transition: transform 0.1s ease-in-out;
+            border: 5px solid rgb(0, 174, 248);
+        }
+    </style>
+</head>
+<body>
+    <div class="funk-container">
+        <div class="funk-image-container" data-audio="audio/act_like_you_know.mp3">
+            <img src="images/act_like_you_know.png" alt="Image 1">
+        </div>
+        <div class="funk-image-container" data-audio="audio/el_nino.mp3">
+            <img src="images/el_nino.png" alt="Image 2">
+        </div>
+        <div class="funk-image-container" data-audio="audio/and_the_beat_goes_on.mp3">
+            <img src="images/and_the_beat_goes_on.png" alt="Image 3">
+        </div>
+    </div>
+    <script>
+        let currentAudio = null;
+        let currentSelected = null;
+
+        document.querySelectorAll('.image-container').forEach(container => {
+            container.addEventListener('click', function() {
+                if (currentSelected === this) {
+                    currentSelected.classList.remove('selected');
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    currentSelected = null;
+                    currentAudio = null;
+                } else {
+                    if (currentSelected) {
+                        currentSelected.classList.remove('selected');
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0;
+                    }
+                    this.classList.add('selected');
+                    currentAudio = new Audio(this.getAttribute('data-audio'));
+                    currentAudio.play();
+                    currentSelected = this;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
