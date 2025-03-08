@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oui</title>
+    <title>burger</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -53,7 +53,7 @@
                 <label><input type="radio" name="gentilic-answer" value="6"> Ch<span class="accent">â</span>teaurouquine, Ch<span class="accent">â</span>teaurouquin</label>         
                 <label><input type="radio" name="gentilic-answer" value="5"> Castelroussine, Castelroussin (Parce que pourquoi pas ?)</label>
             </form>
-            <p class="hidden-message" id="gentilic-message"></p> 
+            <p class="hidden-message" id="gentilic-message">Vive Châteauroux</p> 
             <p class="boris hidden-boris" id="gentilic-hidden-boris">ʕ•ᴥ•ʔ</p> 
         </section>
 
@@ -70,20 +70,23 @@
 
 
 
-        <!--Funk-->
+        <!--Musique-->
         <section class="white">
-            <p class="section-item">Un peu de funk dans sa vie, ça peut pas faire de mal :)</p>
-            <div class="funk-container">
-                <div class="funk-image-container" data-audio="audio/act_like_you_know.mp3">
+            <p class="section-item">Voici une délicieuse s<span class="accent">é</span>lection d'extraits de dix secondes qu'il suffit d'écouter pour gagner un Boris et être de bonne humeur :</p>
+            <div class="music-container section-item">
+                <div class="music-image-container" id="music1" data-audio="audio/act_like_you_know.mp3">
                     <img src="images/act_like_you_know.png" alt="Image 1">
                 </div>
-                <div class="funk-image-container" data-audio="audio/el_nino.mp3">
+                <div class="music-image-container" id="music2" data-audio="audio/el_nino.mp3">
                     <img src="images/el_nino.png" alt="Image 2">
                 </div>
-                <div class="funk-image-container" data-audio="audio/and_the_beat_goes_on.mp3">
-                    <img src="images/and_the_beat_goes_on.png" alt="Image 3">
+                <div class="music-image-container" id="music3" data-audio="audio/and_the_beat_goes_on.mp3">
+                    <img src="images/jazz_is_for_ordinary_people.png" alt="Image 3">
                 </div>
             </div>
+            <p class="section-item hidden-message" id="music-message">Vive la musique</p>
+            <p class="section-item hidden-message" id="music-success-message">Merci d'avoir tout <span class="accent">é</span>cout<span class="accent">é</span> ! Voil<span class="accent">à</span> un Boris musical :</p>
+            <p class="boris hidden-boris" id="music-hidden-boris">ʕ•ᴥ•ʔ</p>
         </section>
 
 
@@ -111,7 +114,7 @@
                     <button class="hint-button" id="hint-3-button">Troidice ?</button>
                 </div>
             </div>
-            <p class="section-item hidden-message" id="password-message"></p>
+            <p class="section-item hidden-message" id="password-message">Vive les burgers</p>
             <p class="boris hidden-boris" id="password-hidden-boris">ʕ•ᴥ•ʔ</p>
         </section>
         

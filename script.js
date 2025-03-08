@@ -98,11 +98,27 @@ new Sortable(container, {
 });
 
 
-/* Funk */
+/* Musique */
 let currentAudio = null;
 let currentSelected = null;
 
-document.querySelectorAll('.funk-image-container').forEach(container => {
+let hasBeenPlayed = {
+    "music1" : false,
+    "music2" : false,
+    "music3" : false
+};
+let numberOfMusicsPlayed = 0;
+
+const musicMessages = {
+    "music1" : "De la bonne funk",
+    "music2" : "C'est vrai en plus",
+    "music3" : "Encore du groove"
+};
+const musicMessage = document.getElementById("music-message");
+const musicSuccessMessage = document.getElementById("music-success-message");
+const musicHiddenBoris = document.getElementById("music-hidden-boris");
+
+document.querySelectorAll('.music-image-container').forEach(container => {
     container.addEventListener('click', function() {
         if (currentSelected === this) {
             currentSelected.classList.remove('selected');
@@ -120,6 +136,16 @@ document.querySelectorAll('.funk-image-container').forEach(container => {
             currentAudio = new Audio(this.getAttribute('data-audio'));
             currentAudio.play();
             currentSelected = this;
+            musicMessage.textContent = musicMessages[this.getAttribute('id')];
+            if (!hasBeenPlayed[this.getAttribute('id')]) {
+                hasBeenPlayed[this.getAttribute('id')] = true;
+                numberOfMusicsPlayed++;
+                if (numberOfMusicsPlayed >= 3) {
+                    musicSuccessMessage.style.visibility = 'visible';
+                    musicHiddenBoris.style.visibility = 'visible';
+                }
+            }
+            musicMessage.style.visibility = 'visible';
         }
     });
 });
