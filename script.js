@@ -36,10 +36,10 @@ mapContainer.addEventListener("click", function(event) {
 
 const gentilicMessages = {
     "1": "Jamais de la vie. Nique la physique et la chimie.",
-    "2": "C'est le talent de Clément ça.",
+    "2": "C'est le talent de Cl<span class='accent'>é</span>ment <span class='accent'>ç</span>a :)",
     "3": "Malheureusement non :(",
     "4": "Effectivement, je siffle h24.",
-    "5": "Je prédis une campagne bda de folie.",
+    "5": 'Je pr<span class="accent">é</span>dis une campagne bda de folie.',
 };
 const radios = document.querySelectorAll('input[name="gentilic-answer"]');
 const gentilicMessage = document.getElementById("gentilic-message");
@@ -52,7 +52,7 @@ radios.forEach(radio => {
             if (this.value === "4") {
                 gentilicHiddenBoris.style.visibility = "visible";
             }
-            gentilicMessage.textContent = gentilicMessages[this.value];
+            gentilicMessage.innerHTML = gentilicMessages[this.value];
             gentilicMessage.style.visibility = "visible";
         }
     }); 
@@ -63,7 +63,7 @@ radios.forEach(radio => {
 /* Rêve */
 
 const dreamHiddenBoris = document.getElementById("dream-hidden-boris");
-const correctOrder = ["être", "une", "moule", "avec", "la", "tête", "léniniste"];
+const correctOrder = ["c'est", "un", "film", "avec", "des", "castors", "zombies"];
 const container = document.getElementById("sortable");
 const dreamSuccessMessage = document.getElementById("dream-success-message");
 
@@ -128,7 +128,7 @@ hint1Button.addEventListener("click", function() {
     hint1Button.style.display = "none";
     const hint1 = document.getElementById("hint-1");
     const hint1Text = document.createElement("p") ;
-    hint1Text.textContent = "C'est un plat faussement équilibré";
+    hint1Text.innerHTML = "C'est un plat faussement <span class='accent'>é</span>quilibr<span class='accent'>é</span>";
     hint1.appendChild(hint1Text);
     hint2Button.style.visibility = "visible";
 })
@@ -137,7 +137,7 @@ hint2Button.addEventListener("click", function() {
     hint2Button.style.display = "none";
     const hint2 = document.getElementById("hint-2");
     const hint2Text = document.createElement("p") ;
-    hint2Text.textContent = "Ville d'origine : Hambourg";
+    hint2Text.innerHTML = "Ville d'origine : Hambourg";
     hint2.appendChild(hint2Text);
     hint2.style.visibility = "visible";
     hint3Button.style.visibility = "visible";
@@ -147,13 +147,13 @@ hint3Button.addEventListener("click", function() {
     hint3Button.style.display = "none";
     const hint3 = document.getElementById("hint-3");
     const hint3Text = document.createElement("p") ;
-    hint3Text.textContent = "Que c'est bon putain";
+    hint3Text.innerHTML = "Que c'est bon putain";
     hint3.appendChild(hint3Text);
     hint3.style.visibility = "visible";
 })
 
-const wrongAnswer = ["C'est pas ça", 
-    "C'est pas ça non plus", 
+const wrongAnswer = ["C'est pas <span class='accent'>ç</span>a", 
+    "C'est pas <span class='accent'>ç</span>a non plus", 
     "Non plus", 
     "Toujours pas", 
     "Encore moins", 
