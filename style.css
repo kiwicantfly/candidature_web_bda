@@ -107,7 +107,7 @@ section {
 
 /* Hero section */
 
-#profil-picture {
+#profile-picture {
     width: min(12vh, 100px);
     margin-bottom: 40px;
 }
@@ -143,6 +143,13 @@ section {
 
 
 /* Gentilé */
+#talents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 10px;
+}
 
 label {
     display: block;

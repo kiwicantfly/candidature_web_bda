@@ -35,12 +35,11 @@ mapContainer.addEventListener("click", function(event) {
 /* Gentilé */
 
 const gentilicMessages = {
-    "1": "C'est le nom des habitants d'une ville.",
-    "2": "4 ? Plutôt 40 000.",
-    "3": "Ça aurait pu, mais c'est pas ça.",
-    "4": "Pas mal, mais c'est autre chose.",
-    "5": "Bravo ! Pourquoi c'est ça ? Aucune idée.",
-    "6": "Ça c'est si on habite à Châteauroux et qu'on a les cheveux roux."
+    "1": "Jamais de la vie. Nique la physique et la chimie.",
+    "2": "C'est le talent de Clément ça.",
+    "3": "Malheureusement non :(",
+    "4": "Effectivement, je siffle h24.",
+    "5": "Je prédis une campagne bda de folie.",
 };
 const radios = document.querySelectorAll('input[name="gentilic-answer"]');
 const gentilicMessage = document.getElementById("gentilic-message");
@@ -50,11 +49,7 @@ const gentilicHiddenBoris = document.getElementById("gentilic-hidden-boris");
 radios.forEach(radio => {
     radio.addEventListener("change", function() {
         if (this.checked) {
-            if (this.value != "5") {
-                /*gentilicHiddenBoris.style.visibility = "hidden";*/
-                gentilicMessage.style.color = red;
-            } else {
-                gentilicMessage.style.color = 'black';
+            if (this.value === "4") {
                 gentilicHiddenBoris.style.visibility = "visible";
             }
             gentilicMessage.textContent = gentilicMessages[this.value];
