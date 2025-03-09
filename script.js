@@ -68,7 +68,7 @@ radios.forEach(radio => {
 /* Rêve */
 
 const dreamHiddenBoris = document.getElementById("dream-hidden-boris");
-const correctOrder = ["je", "suis", "une", "moule", "avec", "la", "tête", "léniniste"];
+const correctOrder = ["être", "une", "moule", "avec", "la", "tête", "léniniste"];
 const container = document.getElementById("sortable");
 const dreamSuccessMessage = document.getElementById("dream-success-message");
 
