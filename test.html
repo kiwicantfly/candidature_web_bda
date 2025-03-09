@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecteur de son</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .image-container {
+            position: relative;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .selected {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px 5px blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container" id="audioTrigger">
+        <img src="image.jpg" alt="Image">
+    </div>
+    <audio id="audio" src="audio/musique.mp3"></audio>
+    <script>
+        const audioTrigger = document.getElementById('audioTrigger');
+        const audio = document.getElementById('audio');
+
+        audioTrigger.addEventListener('click', function() {
+            if (audioTrigger.classList.contains('selected')) {
+                audioTrigger.classList.remove('selected');
+                audio.pause();
+                audio.currentTime = 0;
+            } else {
+                audioTrigger.classList.add('selected');
+                audio.play();
+            }
+        });
+
+        audio.addEventListener('ended', function() {
+            audioTrigger.classList.remove('selected');
+        });
+    </script>
+</body>
+</html>

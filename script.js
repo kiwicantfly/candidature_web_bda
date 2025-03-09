@@ -39,7 +39,7 @@ const gentilicMessages = {
     "2": "4 ? Plutôt 40 000.",
     "3": "Ça aurait pu, mais c'est pas ça.",
     "4": "Pas mal, mais c'est autre chose.",
-    "5": "Et oui c'est ça ! Tu as mérité ton Boris :",
+    "5": "Bravo ! Pourquoi c'est ça ? Aucune idée.",
     "6": "Ça c'est si on habite à Châteauroux et qu'on a les cheveux roux."
 };
 const radios = document.querySelectorAll('input[name="gentilic-answer"]');
@@ -99,65 +99,26 @@ new Sortable(container, {
 
 
 /* Musique */
-let currentAudio = null;
-let currentSelected = null;
+const audioTrigger = document.getElementById('funk');
+const audio = document.getElementById('audio');
+const musicMessage = document.getElementById('music-message');
+const musicHiddenBoris = document.getElementById('music-hidden-boris');
 
-let hasBeenPlayed = {
-    "music1" : false,
-    "music2" : false,
-    "music3" : false
-};
-let numberOfMusicsPlayed = 0;
+audioTrigger.addEventListener('click', function() {
+    if (audioTrigger.classList.contains('selected')) {
+        audioTrigger.classList.remove('selected');
+        audio.pause();
+        audio.currentTime = 0;
+    } else {
+        audioTrigger.classList.add('selected');
+        audio.play();
+    }
+});
 
-const musicMessages = {
-    "music1" : "De la bonne funk",
-    "music2" : "C'est vrai en plus",
-    "music3" : "Encore du groove"
-};
-const musicMessage = document.getElementById("music-message");
-const musicSuccessMessage = document.getElementById("music-success-message");
-const musicHiddenBoris = document.getElementById("music-hidden-boris");
-
-document.querySelectorAll('.music-image-container').forEach(container => {
-    container.addEventListener('click', function() {
-        if (currentSelected === this) {
-            currentSelected.classList.remove('selected');
-            musicMessage.style.visibility = 'hidden';
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-            currentSelected = null;
-            currentAudio = null;
-        } else {
-            if (currentSelected) {
-                currentSelected.classList.remove('selected');
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-            }
-            this.classList.add('selected');
-            currentAudio = new Audio(this.getAttribute('data-audio'));
-            currentAudio.play();
-            currentSelected = this;
-            musicMessage.textContent = musicMessages[this.getAttribute('id')];
-            if (!hasBeenPlayed[this.getAttribute('id')]) {
-                hasBeenPlayed[this.getAttribute('id')] = true;
-                numberOfMusicsPlayed++;
-                if (numberOfMusicsPlayed >= 3) {
-                    musicSuccessMessage.style.visibility = 'visible';
-                    musicHiddenBoris.style.visibility = 'visible';
-                }
-            }
-            musicMessage.style.visibility = 'visible';
-
-            currentAudio.addEventListener('ended', function() {
-                if (currentSelected) {
-                    currentSelected.classList.remove('selected');
-                    musicMessage.style.visibility = 'hidden';
-                    currentSelected = null;
-                    currentAudio = null;
-                }
-            });
-        }
-    });
+audio.addEventListener('ended', function() {
+    audioTrigger.classList.remove('selected');
+    musicMessage.style.visibility = 'visible';
+    musicHiddenBoris.style.visibility = 'visible';
 });
 
 
@@ -181,7 +142,7 @@ hint2Button.addEventListener("click", function() {
     hint2Button.style.display = "none";
     const hint2 = document.getElementById("hint-2");
     const hint2Text = document.createElement("p") ;
-    hint2Text.textContent = "Ça vient de Hambourg";
+    hint2Text.textContent = "Ville d'origine : Hambourg";
     hint2.appendChild(hint2Text);
     hint2.style.visibility = "visible";
     hint3Button.style.visibility = "visible";
@@ -205,9 +166,9 @@ const wrongAnswer = ["C'est pas ça",
     "No", 
     "Nope", 
     "Nein", 
-    "Courage, tu peux le faire", 
+    "Courage, tu peux y arriver", 
     "Nan", 
-    "C'était 'burger'"];
+    "C'est un burger !"];
 
 let count = 0;
 

@@ -17,11 +17,11 @@
             <div class="section-item" style="text-align: center;">
                 <img id="profil-picture" src="images/profil_picture.png" alt="Une tête d'abruti">
             </div>
-            <p class="section-item">Bien le bonjour</p>
-            <p class="section-item">Pour rendre cette candidature respo web un peu amusante, je te propose de faire un petit jeu. </p>
-            <p class="section-item">Je vais me pr<span class="accent">é</span>senter en quelques points, et <span class="accent">à</span> chaque fois, tu devras trouver un Boris comme lui :</p>
+            <p class="section-item">Bien le bonjour,</p>
+            <p class="section-item">Je candidate respo web ! Ceci est ma candidature / un livrable / un petit jeu. </p>
+            <p class="section-item">Je vais me pr<span class="accent">é</span>senter en quelques points, et <span class="accent">à</span> chaque fois, tu devras faire appara<span class="accent">î</span>tre un Boris comme lui :</p>
             <p class="section-item boris">ʕ•ᴥ•ʔ</p>
-            <p class="section-item">Il y en a 5 <span class="accent">à</span> trouver :)</p>
+            <p class="section-item">Il y en a 5 en tout :)</p>
             <p style="text-align: right">Jafar</p>
         </section>
 
@@ -29,8 +29,8 @@
 
         <!--Châteauroux-->
         <section class="black" id="chateauroux">
-            <p class="section-item">Je viens de Ch<span class="accent">â</span>teauroux (Oui oui, pour de vrai)</p>            
-            <p>Peux-tu situer Ch<span class="accent">â</span>teauroux sur la carte ? (Au pixel pr<span class="accent">è</span>s attention)</p>
+            <p class="section-item">Je viens de Ch<span class="accent">â</span>teauroux (Oui oui, pour de vrai).</p>            
+            <p>Peux-tu situer Ch<span class="accent">â</span>teauroux sur la carte ?</p>
             <div id="map-container">
                 <div id="background-map">
                     <img id="target-map" src="images/pinned_map.png">
@@ -51,7 +51,7 @@
                 <label><input type="radio" name="gentilic-answer" value="3"> Ch<span class="accent">â</span>teauroussoise, Ch<span class="accent">â</span>teauroussoix</label>
                 <label><input type="radio" name="gentilic-answer" value="4"> Ch<span class="accent">â</span>teauroussienne, Ch<span class="accent">â</span>teauroussien</label>
                 <label><input type="radio" name="gentilic-answer" value="6"> Ch<span class="accent">â</span>teaurouquine, Ch<span class="accent">â</span>teaurouquin</label>         
-                <label><input type="radio" name="gentilic-answer" value="5"> Castelroussine, Castelroussin (Parce que pourquoi pas ?)</label>
+                <label><input type="radio" name="gentilic-answer" value="5"> Castelroussine, Castelroussin</label>
             </form>
             <p class="hidden-message" id="gentilic-message">Vive Châteauroux</p> 
             <p class="boris hidden-boris" id="gentilic-hidden-boris">ʕ•ᴥ•ʔ</p> 
@@ -61,7 +61,7 @@
 
         <!--Rêve-->
         <section class="black" id="dream">
-            <p class="section-item">De quoi r<span class="accent">ê</span>ve-je la nuit ?</p>
+            <p class="section-item">Qu'est-ce que je r<span class="accent">ê</span>ve de devenir plus tard ?</p>
             <p class="section-item">Remets les mots dans le bon ordre pour le savoir :</p>
             <div class="sentence section-item" id="sortable"></div>
             <p class="section-item hidden-message" id="dream-success-message">Bravo ! Tu as r<span class="accent">é</span>ussi. Voici un autre Boris :</p>
@@ -72,21 +72,14 @@
 
         <!--Musique-->
         <section class="white">
-            <p class="section-item">Voici une d<span class="accent">é</span>licieuse s<span class="accent">é</span>lection d'extraits de dix secondes.</p>
-            <p class="section-item">Il suffit de les <span class="accent">é</span>couter pour gagner un Boris et <span class="accent">ê</span>tre de bonne humeur :</p>
+            <p class="section-item">Il te suffit d'<span class="accent">é</span>couter cet extrait (10s) d'Act Like You Know pour avoir un Boris et <span class="accent">ê</span>tre de bonne humeur :)</p>
             <div class="music-container section-item">
-                <div class="music-image-container" id="music1" data-audio="audio/act_like_you_know.mp3">
-                    <img src="images/act_like_you_know.png" alt="Image 1">
-                </div>
-                <div class="music-image-container" id="music2" data-audio="audio/el_nino.mp3">
-                    <img src="images/el_nino.png" alt="Image 2">
-                </div>
-                <div class="music-image-container" id="music3" data-audio="audio/and_the_beat_goes_on.mp3">
-                    <img src="images/jazz_is_for_ordinary_people.png" alt="Image 3">
+                <div class="music-image-container" id="funk">
+                    <img src="images/act_like_you_know.png">
                 </div>
             </div>
-            <p class="section-item hidden-message" id="music-message">Vive la musique</p>
-            <p class="section-item hidden-message" id="music-success-message">Merci d'avoir tout <span class="accent">é</span>cout<span class="accent">é</span> !</p>
+            <audio id="audio" src="audio/act_like_you_know.mp3"></audio>
+            <p class="section-item hidden-message" id="music-message">La funk c'est bon pour la sant<<span class="accent">é</span>span class="accent">é</span>.</p>
             <p class="boris hidden-boris" id="music-hidden-boris">ʕ•ᴥ•ʔ</p>
         </section>
 
@@ -122,7 +115,8 @@
 
         <!--C'est fini-->
         <section class="white">
-            <p>La bise</p>
+            <p class="section-item">Je candidate aussi RA.</p>
+            <p class="section-item">La bise :)</p>
         </section>
 
     </main>
