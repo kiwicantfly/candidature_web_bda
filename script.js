@@ -181,7 +181,7 @@ function checkPassword() {
         passwordHiddenBoris.style.visibility = "visible";
         padlockClosed.style.display ="none";
     } else {
-        passwordMessage.textContent = wrongAnswer[count%wrongAnswer.length];
+        passwordMessage.innerHTML = wrongAnswer[count%wrongAnswer.length];
         count++;
         passwordMessage.style.visibility = "visible";
     }
